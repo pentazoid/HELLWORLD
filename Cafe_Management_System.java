@@ -5,12 +5,22 @@
  */
 package Cafe_Management_Systems;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.awt.Color;
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
 /**
  *
  * @author Pentazoid
  */
 public class Cafe_Management_System extends javax.swing.JFrame {
-
+ double[] drink=new double[5];
+ double[] cakes=new double[5];
+ double[] costs=new double[3];
+ double[] i=new double[10];
+ 
+ 
     /**
      * Creates new form Cafe_Management_System
      */
@@ -27,256 +37,103 @@ public class Cafe_Management_System extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        label1 = new java.awt.Label();
-        label2 = new java.awt.Label();
-        label4 = new java.awt.Label();
-        costOfDrinksTextField = new java.awt.TextField();
-        costOfCakesTextField = new java.awt.TextField();
-        serviceChargesTextField = new java.awt.TextField();
-        jPanel7 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jPanel9 = new javax.swing.JPanel();
-        label3 = new java.awt.Label();
-        label5 = new java.awt.Label();
-        label6 = new java.awt.Label();
-        subTotalTextField = new java.awt.TextField();
-        taxTextField = new java.awt.TextField();
-        totalTextField = new java.awt.TextField();
         jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        receiptTextArea = new javax.swing.JTextArea();
+        jPanel6 = new javax.swing.JPanel();
         receiptButton = new javax.swing.JButton();
-        resetButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
         totalButton = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        resetButton = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
         icedLatteCheckBox = new javax.swing.JCheckBox();
-        latteCheckBox = new javax.swing.JCheckBox();
         espressoCheckBox = new javax.swing.JCheckBox();
-        icedCappucinoCheckBox = new javax.swing.JCheckBox();
-        cappucinoCheckBox = new javax.swing.JCheckBox();
+        cappuccinoCheckBox = new javax.swing.JCheckBox();
+        icedCappuccinoCheckBox = new javax.swing.JCheckBox();
+        latteCheckBox = new javax.swing.JCheckBox();
+        icedLatteTextField = new javax.swing.JTextField();
         latteTextField = new javax.swing.JTextField();
         espressoTextField = new javax.swing.JTextField();
-        cappucinoTextField = new javax.swing.JTextField();
-        icedCappucinoTextField = new javax.swing.JTextField();
-        icedLatteTextField = new javax.swing.JTextField();
+        cappuccinoTextField = new javax.swing.JTextField();
+        icedCappuccinoTextField = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
+        carrotCakeCheckBox = new javax.swing.JCheckBox();
+        shortCakeCheckBox = new javax.swing.JCheckBox();
+        cheeseCakeCheckBox = new javax.swing.JCheckBox();
+        peachCakeCheckBox = new javax.swing.JCheckBox();
         coffeeCakeCheckBox = new javax.swing.JCheckBox();
-        carltonCakeCheckBox = new javax.swing.JCheckBox();
-        redVelvetCakeCheckBox = new javax.swing.JCheckBox();
-        kilburnChocolateCakeCheckBox = new javax.swing.JCheckBox();
-        parkChocolateCakeCheckBox = new javax.swing.JCheckBox();
-        bostonCreamPieTextField = new javax.swing.JTextField();
-        blackForestCakeTextField = new javax.swing.JTextField();
-        lagosChocolateCakeTextField = new javax.swing.JTextField();
-        carltonHillChocolateCakeTextField = new javax.swing.JTextField();
-        redVelvetCakeTextField = new javax.swing.JTextField();
-        parkChocolateTextField = new javax.swing.JTextField();
         coffeeCakeTextField = new javax.swing.JTextField();
-        bostonCreamPieCheckBox = new javax.swing.JCheckBox();
-        blackChocolateCakeCheckBox = new javax.swing.JCheckBox();
-        lagosCakeCheckBox = new javax.swing.JCheckBox();
-        lagosCakeTextField = new javax.swing.JTextField();
-        carltonCakeTextField = new javax.swing.JTextField();
-        kilburnChocolateCakeTextField = new javax.swing.JTextField();
+        carrotCakeTextField = new javax.swing.JTextField();
+        shortCakeTextField = new javax.swing.JTextField();
+        cheeseCakeTextField = new javax.swing.JTextField();
+        peachCakeTextField = new javax.swing.JTextField();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jScrollBar1 = new javax.swing.JScrollBar();
+        jLabel3 = new javax.swing.JLabel();
+        taxTextField = new javax.swing.JTextField();
+        subTotalTextField = new javax.swing.JTextField();
+        totalTextField = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-
-        jCheckBox1.setText("jCheckBox1");
+        jLabel9 = new javax.swing.JLabel();
+        costOfDrinksTextField = new javax.swing.JTextField();
+        costOfCakesTextField = new javax.swing.JTextField();
+        serviceChargeTextField = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(7000, 3000));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setPreferredSize(new java.awt.Dimension(1368, 730));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 8));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 0, 102));
         jLabel1.setText("Cafe Management Systems");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(954, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(79, 79, 79)
                 .addComponent(jLabel1)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(356, 356, 356))
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 10, 2170, 160));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 8));
+        receiptTextArea.setColumns(20);
+        receiptTextArea.setRows(5);
+        jScrollPane1.setViewportView(receiptTextArea);
 
-        label1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        label1.setText("Cost of Drinks");
-
-        label2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        label2.setText("Service Charges");
-
-        label4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        label4.setText("Cost of Cakes");
-
-        costOfDrinksTextField.setText("textField1");
-
-        costOfCakesTextField.setText("textField1");
-
-        serviceChargesTextField.setText("textField1");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(serviceChargesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(costOfDrinksTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(costOfCakesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(780, 780, 780))
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel6Layout.createSequentialGroup()
-                    .addGap(20, 20, 20)
-                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(970, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(costOfDrinksTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
-                .addComponent(costOfCakesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(serviceChargesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                    .addContainerGap(186, Short.MAX_VALUE)
-                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(130, 130, 130)))
-        );
-
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 410, 360));
-
-        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 8));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 914, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 460, 950, 540));
-
-        jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 8));
-
-        label3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        label3.setText("Tax");
-
-        label5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        label5.setText("SubTotal");
-
-        label6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        label6.setText("Total");
-
-        subTotalTextField.setText("textField1");
-
-        taxTextField.setText("textField1");
-
-        totalTextField.setText("textField1");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(label3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label6, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 246, Short.MAX_VALUE)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addComponent(subTotalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addComponent(totalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))))
-            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                    .addContainerGap(374, Short.MAX_VALUE)
-                    .addComponent(taxTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(20, 20, 20)))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(totalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(subTotalTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(101, 101, 101)
-                        .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(21, 21, 21))
-            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel9Layout.createSequentialGroup()
-                    .addGap(28, 28, 28)
-                    .addComponent(taxTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(316, Short.MAX_VALUE)))
-        );
-
-        label5.getAccessibleContext().setAccessibleName("Tax");
-
-        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 630, 730, 380));
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 8));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
         receiptButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         receiptButton.setText("Receipt");
@@ -286,16 +143,8 @@ public class Cafe_Management_System extends javax.swing.JFrame {
             }
         });
 
-        resetButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        resetButton.setText("Reset");
-        resetButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resetButtonActionPerformed(evt);
-            }
-        });
-
         exitButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        exitButton.setText("Exit");
+        exitButton.setText("exit");
         exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitButtonActionPerformed(evt);
@@ -310,39 +159,68 @@ public class Cafe_Management_System extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        resetButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        resetButton.setText("Reset");
+        resetButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(receiptButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(totalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(resetButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(totalButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(receiptButton)))
+                .addContainerGap(266, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(receiptButton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(totalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(92, Short.MAX_VALUE))
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(totalButton)
+                    .addComponent(receiptButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(resetButton)
+                    .addComponent(exitButton))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 180, 980, -1));
-
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 8));
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
 
         icedLatteCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         icedLatteCheckBox.setText("Iced Latte");
+        icedLatteCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                icedLatteCheckBoxActionPerformed(evt);
+            }
+        });
+
+        espressoCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        espressoCheckBox.setText("Espresso");
+
+        cappuccinoCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        cappuccinoCheckBox.setText("Cappuccino");
+
+        icedCappuccinoCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        icedCappuccinoCheckBox.setText("Iced Cappuccino");
+        icedCappuccinoCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                icedCappuccinoCheckBoxActionPerformed(evt);
+            }
+        });
 
         latteCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         latteCheckBox.setText("Latte");
@@ -352,153 +230,80 @@ public class Cafe_Management_System extends javax.swing.JFrame {
             }
         });
 
-        espressoCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        espressoCheckBox.setText("Espresso");
-
-        icedCappucinoCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        icedCappucinoCheckBox.setText("Iced Cappucinno");
-
-        cappucinoCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        cappucinoCheckBox.setText("Cappuccino");
-
-        latteTextField.setText("jTextField1");
-
-        espressoTextField.setText("jTextField1");
-
-        cappucinoTextField.setText("jTextField1");
-
-        icedLatteTextField.setText("jTextField1");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(icedLatteCheckBox)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                                .addComponent(icedLatteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(latteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(espressoCheckBox)
-                                    .addComponent(icedCappucinoCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(icedCappucinoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(espressoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(cappucinoCheckBox)
-                        .addGap(18, 18, 18)
-                        .addComponent(cappucinoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(10, 10, 10)
-                    .addComponent(latteCheckBox)
-                    .addContainerGap(213, Short.MAX_VALUE)))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(icedLatteCheckBox)
+                            .addComponent(cappuccinoCheckBox)
+                            .addComponent(espressoCheckBox)
+                            .addComponent(latteCheckBox)))
+                    .addComponent(icedCappuccinoCheckBox))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(icedCappuccinoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(icedLatteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(espressoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(latteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cappuccinoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(latteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(latteCheckBox)
+                    .addComponent(latteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(icedLatteCheckBox)
-                    .addComponent(icedLatteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(icedLatteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(espressoCheckBox)
-                    .addComponent(espressoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cappucinoCheckBox)
-                    .addComponent(cappucinoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 66, 66)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(icedCappucinoCheckBox)
-                    .addComponent(icedCappucinoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(138, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(10, 10, 10)
-                    .addComponent(latteCheckBox)
-                    .addContainerGap(443, Short.MAX_VALUE)))
+                    .addComponent(espressoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cappuccinoCheckBox)
+                    .addComponent(cappuccinoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(icedCappuccinoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(icedCappuccinoCheckBox)))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 310, 500));
+        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
 
-        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 8));
+        carrotCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        carrotCakeCheckBox.setText("Carrot Cake");
+
+        shortCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        shortCakeCheckBox.setText("Short Cake");
+
+        cheeseCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        cheeseCakeCheckBox.setText("CheeseCake");
+
+        peachCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        peachCakeCheckBox.setText("Peach Cake");
 
         coffeeCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         coffeeCakeCheckBox.setText("Coffee Cake");
 
-        carltonCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        carltonCakeCheckBox.setText("Carlton Cake ");
-
-        redVelvetCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        redVelvetCakeCheckBox.setText("Red Velvet Cake");
-
-        kilburnChocolateCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        kilburnChocolateCakeCheckBox.setText("Kilburn Chocolate Cake");
-        kilburnChocolateCakeCheckBox.setToolTipText("");
-        kilburnChocolateCakeCheckBox.setActionCommand("");
-
-        parkChocolateCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        parkChocolateCakeCheckBox.setText("Park Chocolate Cake");
-
-        bostonCreamPieTextField.setText("jTextField1");
-
-        blackForestCakeTextField.setText("jTextField1");
-
-        lagosChocolateCakeTextField.setText("jTextField1");
-
-        carltonHillChocolateCakeTextField.setText("jTextField1");
-
-        redVelvetCakeTextField.setText("jTextField1");
-
-        parkChocolateTextField.setForeground(new java.awt.Color(204, 255, 51));
-        parkChocolateTextField.setText("jTextField1");
-        parkChocolateTextField.addActionListener(new java.awt.event.ActionListener() {
+        cheeseCakeTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                parkChocolateTextFieldActionPerformed(evt);
+                cheeseCakeTextFieldActionPerformed(evt);
             }
         });
-
-        coffeeCakeTextField.setText("jTextField1");
-        coffeeCakeTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                coffeeCakeTextFieldActionPerformed(evt);
-            }
-        });
-
-        bostonCreamPieCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        bostonCreamPieCheckBox.setText("Boston Cream Pie");
-
-        blackChocolateCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        blackChocolateCakeCheckBox.setText("Black Chocolate Cake");
-        blackChocolateCakeCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blackChocolateCakeCheckBoxActionPerformed(evt);
-            }
-        });
-
-        lagosCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lagosCakeCheckBox.setText("Lagos Cake");
-
-        lagosCakeTextField.setText("jTextField1");
-
-        carltonCakeTextField.setText("jTextField1");
-
-        kilburnChocolateCakeTextField.setText("jTextField1");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -506,164 +311,363 @@ public class Cafe_Management_System extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel8Layout.createSequentialGroup()
-                            .addGap(252, 252, 252)
-                            .addComponent(lagosChocolateCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(3, 3, 3))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                            .addGap(237, 237, 237)
-                            .addComponent(carltonHillChocolateCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(carltonCakeCheckBox)
-                    .addComponent(kilburnChocolateCakeCheckBox))
-                .addGap(0, 297, Short.MAX_VALUE))
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(redVelvetCakeCheckBox)
-                    .addComponent(bostonCreamPieCheckBox)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(parkChocolateCakeCheckBox)
-                            .addComponent(coffeeCakeCheckBox)
-                            .addComponent(lagosCakeCheckBox)
-                            .addComponent(blackChocolateCakeCheckBox))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(parkChocolateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(peachCakeCheckBox)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(peachCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(coffeeCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(redVelvetCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bostonCreamPieTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
+                        .addComponent(cheeseCakeCheckBox)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cheeseCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lagosCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(blackForestCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(carltonCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kilburnChocolateCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(shortCakeCheckBox)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(shortCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(carrotCakeCheckBox)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(carrotCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(coffeeCakeCheckBox)
+                        .addGap(138, 138, 138)
+                        .addComponent(coffeeCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(bostonCreamPieTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(redVelvetCakeCheckBox)
-                            .addComponent(redVelvetCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(bostonCreamPieCheckBox))
-                .addGap(26, 26, 26)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(coffeeCakeCheckBox)
-                    .addComponent(coffeeCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(blackChocolateCakeCheckBox)
-                    .addComponent(blackForestCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(carltonCakeCheckBox)
-                    .addComponent(carltonCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(coffeeCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lagosCakeCheckBox)
-                    .addComponent(lagosCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                    .addComponent(carrotCakeCheckBox)
+                    .addComponent(carrotCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(kilburnChocolateCakeCheckBox)
-                    .addComponent(kilburnChocolateCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(109, 109, 109)
-                .addComponent(lagosChocolateCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(parkChocolateCakeCheckBox))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(carltonHillChocolateCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(parkChocolateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                    .addComponent(shortCakeCheckBox)
+                    .addComponent(shortCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cheeseCakeCheckBox)
+                    .addComponent(cheeseCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(peachCakeCheckBox)
+                    .addComponent(peachCakeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 800, 430));
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2080, 70, -1, -1));
-        getContentPane().add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2140, 0, 20, 1060));
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(2050, 960, -1, -1));
+        jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setText("Tax");
+        jLabel2.setToolTipText("");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setText("Total");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel8.setText("Subtotal");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addComponent(taxTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(subTotalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(totalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(67, 67, 67))))
+            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                    .addContainerGap(226, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(226, Short.MAX_VALUE)))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(taxTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(subTotalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(totalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addContainerGap(51, Short.MAX_VALUE))
+            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                    .addContainerGap(103, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(104, Short.MAX_VALUE)))
+        );
+
+        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setText("Cost of Drinks");
+        jLabel4.setToolTipText("");
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel9.setText("Service Charge");
+
+        costOfDrinksTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                costOfDrinksTextFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel10.setText("Cost of Cakes");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addComponent(costOfDrinksTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(costOfCakesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(serviceChargeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(67, 67, 67))))
+            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                    .addContainerGap(154, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(154, Short.MAX_VALUE)))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(costOfDrinksTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(costOfCakesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(serviceChargeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addContainerGap(119, Short.MAX_VALUE))
+            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                    .addContainerGap(142, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(142, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(105, 105, 105)
+                                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(58, 58, 58)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)
+                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(325, Short.MAX_VALUE))))
+        );
 
         pack();
     }// </editor-fold>                        
 
-    private void receiptButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
-
-    private void totalButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }                                           
-
-    private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        icedCappucinoCheckBox.setSelected(false);
-        cappucinoCheckBox.setSelected(false);
-        espressoCheckBox.setSelected(false);
-        icedLatteCheckBox.setSelected(false);
-        latteCheckBox.setSelected(false);
-        bostonCreamPieTextField.setText(null);
-        redVelvetCakeTextField.setText(null);
-        coffeeCakeTextField.setText(null);
-        blackForestCakeTextField.setText(null);
-        carltonCakeTextField.setText(null);
-        lagosCakeTextField.setText(null);
-        kilburnChocolateCakeTextField.setText(null);
-        icedCappucinoTextField.setText(null);
-        latteTextField.setText(null);
-        icedLatteTextField.setText(null);
-        espressoTextField.setText(null);
-        cappucinoTextField.setText(null);
-        bostonCreamPieCheckBox.setSelected(false);
-        redVelvetCakeCheckBox.setSelected(false);
-        coffeeCakeCheckBox.setSelected(false);
-        carltonCakeCheckBox.setSelected(false);
-        lagosCakeCheckBox.setSelected(false);
-        kilburnChocolateCakeCheckBox.setSelected(false);
-        blackChocolateCakeCheckBox.setSelected(false);
-        taxTextField.setText(null);
-        costOfDrinksTextField.setText(null);
-        costOfCakesTextField.setText(null);
-        serviceChargesTextField.setText(null);
-        subTotalTextField.setText(null);
-        totalTextField.setText(null);
-        
-        
-    }                                           
-
-    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
-
-    private void latteCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
-
-    private void parkChocolateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+    private void icedCappuccinoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                       
         // TODO add your handling code here:
     }                                                      
 
-    private void coffeeCakeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+    private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+     icedCappuccinoCheckBox.setSelected(false);
+     cappuccinoCheckBox.setSelected(false);
+     espressoCheckBox.setSelected(false);
+     icedLatteCheckBox.setSelected(false);
+     latteCheckBox.setSelected(false);
+     icedCappuccinoTextField.setText("0");
+     cappuccinoTextField.setText("0");
+     espressoTextField.setText("0");
+     icedLatteTextField.setText("0");
+     latteTextField.setText("0");
+     peachCakeCheckBox.setSelected(false);
+     cheeseCakeCheckBox.setSelected(false);
+     shortCakeCheckBox.setSelected(false);
+     carrotCakeCheckBox.setSelected(false);
+     coffeeCakeCheckBox.setSelected(false);
+     peachCakeTextField.setText("0");
+     coffeeCakeTextField.setText("0");
+     carrotCakeTextField.setText("0");
+     shortCakeTextField.setText("0");
+     cheeseCakeTextField.setText("0");
+     costOfDrinksTextField.setText("0");
+     costOfCakesTextField.setText("0");
+     serviceChargeTextField.setText("0");
+     taxTextField.setText("0");
+     subTotalTextField.setText("0");
+     totalTextField.setText("0");
+    }                                           
+
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        System.exit(0);
+    }                                          
+
+    private void receiptButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+      drink[4]=Double.parseDouble(icedCappuccinoTextField.getText());
+      drink[3]=Double.parseDouble(cappuccinoTextField.getText());
+      drink[2]=Double.parseDouble(espressoTextField.getText());
+      drink[1]=Double.parseDouble(icedLatteTextField.getText());
+      drink[0]=Double.parseDouble(latteTextField.getText());
+      
+      cakes[0]=Double.parseDouble(coffeeCakeTextField.getText());
+      cakes[1]=Double.parseDouble(carrotCakeTextField.getText());
+      cakes[2]=Double.parseDouble(shortCakeTextField.getText());
+      cakes[3]=Double.parseDouble(cheeseCakeTextField.getText());
+      cakes[4]=Double.parseDouble(peachCakeTextField.getText());
+      costs[0]=Double.parseDouble(taxTextField.getText());
+      costs[1]=Double.parseDouble(subTotalTextField.getText());
+      costs[2]=Double.parseDouble(totalTextField.getText());
+      //========================================================
+      int refs;
+      refs=1325+(int)(Math.random()+4328);
+     // int ref=(refs);
+      
+      //========================================================
+      Calendar timer=Calendar.getInstance();
+      timer.getTime();
+      SimpleDateFormat tTime=new SimpleDateFormat("MM:HH:SS");
+      tTime.format(timer.getTime());
+      SimpleDateFormat Tdate=new SimpleDateFormat("dd:MM:yyyy");
+      Tdate.format(timer.getTime());
+              
+      receiptTextArea.append(" \t\n Cafe Management System: \n\n"+
+              "Reference:\t\t\t"+refs+
+              "Latte:\t\t"+drink[0]+
+              "\nIced Latte:\t\t"+drink[1]+
+              "\nEspresso:\t\t"+drink[2]+
+              "\nCappuccino:\t\t"+drink[3]+
+              "\nIced Cappuccino:\t\t"+drink[4]+
+              "\n===========================\t\t"+
+              "\nCoffee Cake:\t\t\t\t "+cakes[0]+
+              "\nCarrot Cake:\t\t "+cakes[1]+
+              "\nShort Cake:\t\t "+cakes[2]+
+              "\nCheese Cake:\t\t "+cakes[3]+
+              "\nPeach Cake:\t\t "+cakes[4] +
+               "\n===========================\t\t"+
+                "\nTax:\t "+costs[0]+
+                 "\nSubtotal:\t "+costs[1]+
+                  "\nTotal:\t "+costs[2]+
+                 "\n===========================\t\t"+       
+              "\nDate : "+Tdate.format(timer.getTime())+
+              "\nTime :"+tTime.format(timer.getTime())+
+              "\n\n\t\tThank you");
+      
+      
+      
+      
+      
+      
+    }                                             
+
+    private void cheeseCakeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                    
         // TODO add your handling code here:
     }                                                   
 
-    private void blackChocolateCakeCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+    private void totalButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+       
+        
+    }                                           
+
+    private void latteCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                              
+       
+        
+               double cLatte=Double.parseDouble(costOfDrinksTextField.getText());
+       double Latte=Double.parseDouble(latteTextField.getText());
+       double iLatte=1.99;
+       
+       if(latteCheckBox.isSelected())
+       {
+           i[1]=(Latte*iLatte)+cLatte;
+           String pDrink=String.format("%.2f",i[1]);
+           costOfDrinksTextField.setText(pDrink);
+           latteTextField.setText(pDrink);
+       }
+    }                                             
+
+    private void costOfDrinksTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                      
         // TODO add your handling code here:
-    }                                                          
+    }                                                     
+
+    private void icedLatteCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+     
+    } 
+    }                                                 
 
     /**
      * @param args the command line arguments
@@ -701,64 +705,53 @@ public class Cafe_Management_System extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JCheckBox blackChocolateCakeCheckBox;
-    private javax.swing.JTextField blackForestCakeTextField;
-    private javax.swing.JCheckBox bostonCreamPieCheckBox;
-    private javax.swing.JTextField bostonCreamPieTextField;
-    private javax.swing.JCheckBox cappucinoCheckBox;
-    private javax.swing.JTextField cappucinoTextField;
-    private javax.swing.JCheckBox carltonCakeCheckBox;
-    private javax.swing.JTextField carltonCakeTextField;
-    private javax.swing.JTextField carltonHillChocolateCakeTextField;
+    private javax.swing.JCheckBox cappuccinoCheckBox;
+    private javax.swing.JTextField cappuccinoTextField;
+    private javax.swing.JCheckBox carrotCakeCheckBox;
+    private javax.swing.JTextField carrotCakeTextField;
+    private javax.swing.JCheckBox cheeseCakeCheckBox;
+    private javax.swing.JTextField cheeseCakeTextField;
     private javax.swing.JCheckBox coffeeCakeCheckBox;
     private javax.swing.JTextField coffeeCakeTextField;
-    private java.awt.TextField costOfCakesTextField;
-    private java.awt.TextField costOfDrinksTextField;
+    private javax.swing.JTextField costOfCakesTextField;
+    private javax.swing.JTextField costOfDrinksTextField;
     private javax.swing.JCheckBox espressoCheckBox;
     private javax.swing.JTextField espressoTextField;
-    javax.swing.JButton exitButton;
-    private javax.swing.JCheckBox icedCappucinoCheckBox;
-    private javax.swing.JTextField icedCappucinoTextField;
+    private javax.swing.JButton exitButton;
+    private javax.swing.JCheckBox icedCappuccinoCheckBox;
+    private javax.swing.JTextField icedCappuccinoTextField;
     private javax.swing.JCheckBox icedLatteCheckBox;
     private javax.swing.JTextField icedLatteTextField;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JCheckBox kilburnChocolateCakeCheckBox;
-    private javax.swing.JTextField kilburnChocolateCakeTextField;
-    private java.awt.Label label1;
-    private java.awt.Label label2;
-    private java.awt.Label label3;
-    private java.awt.Label label4;
-    private java.awt.Label label5;
-    private java.awt.Label label6;
-    private javax.swing.JCheckBox lagosCakeCheckBox;
-    private javax.swing.JTextField lagosCakeTextField;
-    private javax.swing.JTextField lagosChocolateCakeTextField;
     private javax.swing.JCheckBox latteCheckBox;
     private javax.swing.JTextField latteTextField;
-    private javax.swing.JCheckBox parkChocolateCakeCheckBox;
-    private javax.swing.JTextField parkChocolateTextField;
-    javax.swing.JButton receiptButton;
-    private javax.swing.JCheckBox redVelvetCakeCheckBox;
-    private javax.swing.JTextField redVelvetCakeTextField;
-    javax.swing.JButton resetButton;
-    private java.awt.TextField serviceChargesTextField;
-    private java.awt.TextField subTotalTextField;
-    private java.awt.TextField taxTextField;
-    javax.swing.JButton totalButton;
-    private java.awt.TextField totalTextField;
+    private javax.swing.JCheckBox peachCakeCheckBox;
+    private javax.swing.JTextField peachCakeTextField;
+    private javax.swing.JButton receiptButton;
+    private javax.swing.JTextArea receiptTextArea;
+    private javax.swing.JButton resetButton;
+    private javax.swing.JTextField serviceChargeTextField;
+    private javax.swing.JCheckBox shortCakeCheckBox;
+    private javax.swing.JTextField shortCakeTextField;
+    private javax.swing.JTextField subTotalTextField;
+    private javax.swing.JTextField taxTextField;
+    private javax.swing.JButton totalButton;
+    private javax.swing.JTextField totalTextField;
     // End of variables declaration                   
 }
