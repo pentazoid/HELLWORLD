@@ -18,7 +18,7 @@ public class Cafe_Management_System extends javax.swing.JFrame {
  double[] drink=new double[5];
  double[] cakes=new double[5];
  double[] costs=new double[3];
- double[] i=new double[10];
+ double[] i=new double[12];
  
  
     /**
@@ -89,6 +89,7 @@ public class Cafe_Management_System extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1368, 730));
 
+        jPanel2.setBackground(new java.awt.Color(255, 51, 51));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
@@ -210,9 +211,19 @@ public class Cafe_Management_System extends javax.swing.JFrame {
 
         espressoCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         espressoCheckBox.setText("Espresso");
+        espressoCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                espressoCheckBoxActionPerformed(evt);
+            }
+        });
 
         cappuccinoCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         cappuccinoCheckBox.setText("Cappuccino");
+        cappuccinoCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cappuccinoCheckBoxActionPerformed(evt);
+            }
+        });
 
         icedCappuccinoCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         icedCappuccinoCheckBox.setText("Iced Cappuccino");
@@ -286,18 +297,48 @@ public class Cafe_Management_System extends javax.swing.JFrame {
 
         carrotCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         carrotCakeCheckBox.setText("Carrot Cake");
+        carrotCakeCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                carrotCakeCheckBoxActionPerformed(evt);
+            }
+        });
 
         shortCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         shortCakeCheckBox.setText("Short Cake");
+        shortCakeCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shortCakeCheckBoxActionPerformed(evt);
+            }
+        });
 
         cheeseCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         cheeseCakeCheckBox.setText("CheeseCake");
+        cheeseCakeCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cheeseCakeCheckBoxActionPerformed(evt);
+            }
+        });
 
         peachCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         peachCakeCheckBox.setText("Peach Cake");
+        peachCakeCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                peachCakeCheckBoxActionPerformed(evt);
+            }
+        });
 
         coffeeCakeCheckBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         coffeeCakeCheckBox.setText("Coffee Cake");
+        coffeeCakeCheckBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coffeeCakeCheckBoxMouseClicked(evt);
+            }
+        });
+        coffeeCakeCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coffeeCakeCheckBoxActionPerformed(evt);
+            }
+        });
 
         cheeseCakeTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -368,6 +409,12 @@ public class Cafe_Management_System extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Total");
+
+        totalTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalTextFieldActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("Subtotal");
@@ -542,7 +589,18 @@ public class Cafe_Management_System extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void icedCappuccinoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                       
-        // TODO add your handling code here:
+       double cIcedCappuccino=Double.parseDouble(costOfDrinksTextField.getText());
+       double IcedCappuccino=Double.parseDouble(icedCappuccinoTextField.getText());
+       double iIcedCappucino=4.00;
+       
+       if(icedCappuccinoCheckBox.isSelected())
+       {
+           i[4]=(IcedCappuccino*iIcedCappucino)+cIcedCappuccino;
+           String pDrink=String.format("%.2f",i[4]);
+           costOfDrinksTextField.setText(pDrink);
+           icedCappuccinoTextField.setText(pDrink);
+       }
+
     }                                                      
 
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
@@ -640,14 +698,29 @@ public class Cafe_Management_System extends javax.swing.JFrame {
     }                                                   
 
     private void totalButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
-       
-        
+        drink[4]=Double.parseDouble(icedCappuccinoTextField.getText());
+      drink[3]=Double.parseDouble(cappuccinoTextField.getText());
+      drink[2]=Double.parseDouble(espressoTextField.getText());
+      drink[1]=Double.parseDouble(icedLatteTextField.getText());
+      drink[0]=Double.parseDouble(latteTextField.getText());
+      
+      cakes[0]=Double.parseDouble(coffeeCakeTextField.getText());
+      cakes[1]=Double.parseDouble(carrotCakeTextField.getText());
+      cakes[2]=Double.parseDouble(shortCakeTextField.getText());
+      cakes[3]=Double.parseDouble(cheeseCakeTextField.getText());
+      cakes[4]=Double.parseDouble(peachCakeTextField.getText());
+      costs[0]=Double.parseDouble(taxTextField.getText());
+      costs[1]=Double.parseDouble(subTotalTextField.getText());
+      costs[2]=Double.parseDouble(totalTextField.getText());
+      
+      double cTotal=(drink[0]+drink[1]+drink[2]+drink[3]+drink[4]+cakes[0]+cakes[1]+cakes[2]+cakes[3]+cakes[4]);
+      double allTotal=(cTotal);
+      String iTotal=String.format("$ %.2f",allTotal+(allTotal/100));
+      totalTextField.setText(iTotal);
     }                                           
 
     private void latteCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                              
-       
-        
-               double cLatte=Double.parseDouble(costOfDrinksTextField.getText());
+       double cLatte=Double.parseDouble(costOfDrinksTextField.getText());
        double Latte=Double.parseDouble(latteTextField.getText());
        double iLatte=1.99;
        
@@ -665,9 +738,128 @@ public class Cafe_Management_System extends javax.swing.JFrame {
     }                                                     
 
     private void icedLatteCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-     
-    } 
+      double cIcedLatte=Double.parseDouble(costOfDrinksTextField.getText());
+      double icedLatte=Double.parseDouble(icedLatteTextField.getText());
+      double iIcedLatte=2.84;
+      
+      if(icedLatteCheckBox.isSelected())
+      {
+          i[0]=(iIcedLatte*icedLatte)+cIcedLatte;
+          String icedDrink=String.format("%.2f",i[0]);
+          costOfDrinksTextField.setText(icedDrink);
+          icedLatteTextField.setText(icedDrink);
+      }
+      
+      
+    
+      
     }                                                 
+
+    private void espressoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+       double cEspresso=Double.parseDouble(costOfDrinksTextField.getText());
+       double espresso=Double.parseDouble(espressoTextField.getText());
+       double iEspresso=3.08;
+       
+       if(espressoCheckBox.isSelected()){
+           i[2]=(iEspresso*espresso)+cEspresso;
+           String espressoDrink=String.format("%.2f",i[2]);
+           costOfDrinksTextField.setText(espressoDrink);
+           
+           
+       }
+    }                                                
+
+    private void cappuccinoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+       double cCappuccino=Double.parseDouble(costOfDrinksTextField.getText());
+       double Cappuccino=Double.parseDouble(cappuccinoTextField.getText());
+       double iCappucino=1.79;
+       
+       if(cappuccinoCheckBox.isSelected())
+       {
+           i[3]=(Cappuccino*iCappucino)+cCappuccino;
+           String pDrink=String.format("%.2f",i[3]);
+           costOfDrinksTextField.setText(pDrink);
+           latteTextField.setText(pDrink);
+       }
+    }                                                  
+
+    private void coffeeCakeCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        // TODO add your handling code here:
+    }                                                  
+
+    private void coffeeCakeCheckBoxMouseClicked(java.awt.event.MouseEvent evt) {                                                
+        double cCoffeeCake=Double.parseDouble(costOfCakesTextField.getText());
+       double coffeeCake=Double.parseDouble(coffeeCakeTextField.getText());
+       double iCoffeeCake=.79;
+       
+       if(coffeeCakeCheckBox.isSelected())
+       {
+           i[5]=(coffeeCake*iCoffeeCake)+cCoffeeCake;
+           String pDrink=String.format("%.2f",i[5]);
+           costOfCakesTextField.setText(pDrink);
+           coffeeCakeTextField.setText(pDrink);
+       }
+    }                                               
+
+    private void carrotCakeCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+            double cCarrotCake=Double.parseDouble(costOfCakesTextField.getText());
+       double carrotCake=Double.parseDouble(carrotCakeTextField.getText());
+       double iCarrotCake=.89;
+       
+       if(carrotCakeCheckBox.isSelected())
+       {
+           i[6]=(carrotCake*iCarrotCake)+cCarrotCake;
+           String pDrink=String.format("%.2f",i[6]);
+           costOfCakesTextField.setText(pDrink);
+           carrotCakeTextField.setText(pDrink);
+       }
+    }                                                  
+
+    private void shortCakeCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+       double cShortCake=Double.parseDouble(costOfCakesTextField.getText());
+       double shortCake=Double.parseDouble(shortCakeTextField.getText());
+       double iShortCake=1.99;
+       
+       if(shortCakeCheckBox.isSelected())
+       {
+           i[7]=(shortCake*iShortCake)+cShortCake;
+           String pDrink=String.format("%.2f",i[7]);
+           costOfCakesTextField.setText(pDrink);
+           shortCakeTextField.setText(pDrink);
+       }
+    }                                                 
+
+    private void cheeseCakeCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+       double cCheeseCake=Double.parseDouble(costOfCakesTextField.getText());
+       double cheeseCake=Double.parseDouble(cheeseCakeTextField.getText());
+       double iCheeseCake=1.99;
+       
+       if(cheeseCakeCheckBox.isSelected())
+       {
+           i[8]=(cheeseCake*iCheeseCake)+cCheeseCake;
+           String pDrink=String.format("%.2f",i[8]);
+           costOfCakesTextField.setText(pDrink);
+           cheeseCakeTextField.setText(pDrink);
+       }
+    }                                                  
+
+    private void peachCakeCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+       double cPeachCake=Double.parseDouble(costOfCakesTextField.getText());
+       double peachCake=Double.parseDouble(peachCakeTextField.getText());
+       double iPeachCake=3.00;
+       
+       if(peachCakeCheckBox.isSelected())
+       {
+           i[9]=(peachCake*iPeachCake)+cPeachCake;
+           String pDrink=String.format("%.2f",i[9]);
+           costOfCakesTextField.setText(pDrink);
+           peachCakeTextField.setText(pDrink);
+       }
+    }                                                 
+
+    private void totalTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
 
     /**
      * @param args the command line arguments
